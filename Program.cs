@@ -4,7 +4,11 @@
     {
         static void Main(string[] args)
         {
-            LinkedList list = new LinkedList(12);
+            LinkedList linkedList = new LinkedList(12);
+            linkedList.AppendList(13);
+            linkedList.AppendList(14);
+            linkedList.AppendList(15);
+            linkedList.PrintList();
         }
     }
 }
