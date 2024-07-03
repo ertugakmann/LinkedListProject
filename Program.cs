@@ -26,6 +26,17 @@
             linkedList.PrintHead();
             linkedList.PrintTail();
 
+            Console.WriteLine("* * * * * * * * * * * * *");
+
+            linkedList.DeleteFirstNode();
+
+            Console.WriteLine("First Node will be deleted");
+
+            linkedList.PrintList();
+            linkedList.ListLength();
+            linkedList.PrintHead();
+            linkedList.PrintTail();
+
         }
     }
 }

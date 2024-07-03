@@ -104,5 +104,26 @@ namespace LinkedListProject
 
         }
 
+        public Node DeleteFirstNode()
+        {
+            if (length == 0)
+                return null;
+
+            Node temp = head;
+
+            head = head.next;
+            temp.next = null;
+            length--;
+
+            if(length == 1)
+            {
+                head = null;
+                tail = null;
+            }
+
+            return temp;
+           
+        }
+
     }
 }
