@@ -20,46 +20,88 @@ namespace LinkedListProject
             tail = null;
         }
 
-        public LinkedList(int data) 
+        public LinkedList(int data)
         {
-
             Node newNode = new Node(data);
             head = newNode;
             tail = newNode;
             length = 1;
-            Console.WriteLine(newNode.data);
         }
 
         public void AppendList(int data)
         {
             Node newNode = new Node(data);
-
-            if (length == 0)
-            {
-                head = newNode;
-                tail = newNode;
-                length++;
-            }
-            else
-            {
-                tail.next = newNode;
-                tail = newNode;
-               
-            }
-            
+            tail.next = newNode;
+            tail = newNode;
+            length++;
         }
 
         public void PrintList()
         {
             Console.WriteLine("The nodes in LinkedList : ");
-            Console.WriteLine("- - - - - - - - - - - - - -");
-            Node temp = head;
+            Console.WriteLine("- - - - - - - - - - - - - ");
 
-            while(temp != null)
+            Node temp = head;
+            
+            while (temp != null)
             {
                 Console.WriteLine(temp.data);
                 temp = temp.next;
             }
+            
+        }
+        
+        public void ListLength()
+        {
+            Console.WriteLine("The length of LinkedList is : " + length);
+        }
+
+        public void PrintHead()
+        {
+            if(head != null) 
+            {
+                Console.WriteLine("The head of LinkedList is : " + head.data);
+            }
+            
+        }
+
+        public void PrintTail() 
+        {
+            if(tail != null)
+            {
+                Console.WriteLine("The tail of LinkedList is : " + tail.data);
+            }
+            
+        }
+
+        public Node DeleteLastNode()
+        {
+            if(length == 0)
+                return null;
+          
+                Node temp = head;
+                Node son = head;
+
+                while(temp.next != null)
+                {
+                    son = temp;
+                    temp = temp.next;
+                }
+
+                tail = son;
+                tail.next = null;
+           
+          
+
+            if (length == 1)
+            {
+                head = null;
+                tail = null;
+            }
+
+            length--;
+            return temp;
+
         }
 
     }

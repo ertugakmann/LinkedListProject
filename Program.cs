@@ -8,7 +8,24 @@
             linkedList.AppendList(13);
             linkedList.AppendList(14);
             linkedList.AppendList(15);
+            linkedList.AppendList(16);
             linkedList.PrintList();
+            linkedList.ListLength();
+            linkedList.PrintHead();
+            linkedList.PrintTail();
+
+            
+            Console.WriteLine("* * * * * * * * * * * * *");
+
+            linkedList.DeleteLastNode();
+
+            Console.WriteLine("Last Node will be deleted");
+           
+            linkedList.PrintList();
+            linkedList.ListLength();
+            linkedList.PrintHead();
+            linkedList.PrintTail();
+
         }
     }
 }
