@@ -14,8 +14,7 @@
             linkedList.PrintHead();
             linkedList.PrintTail();
 
-            linkedList.InsertNode(2, 17);
-            linkedList.PrintList();
+            
         }
     }
 }

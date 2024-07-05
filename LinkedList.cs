@@ -199,5 +199,29 @@ namespace LinkedListProject
             return false;
             
         }
+
+        public Node DeleteNode(int index)
+        {
+            if (index >= 0 && index < length)
+            {
+                if (index == 0) 
+                    DeleteFirstNode();
+
+                if (index == length - 1)
+                    DeleteLastNode();
+
+                Node temp = GetNode(index - 1);
+                Node deleteNode = GetNode(index);
+
+                temp.next = deleteNode.next;
+                deleteNode.next = null;
+                length--;
+
+                return deleteNode;
+            }
+            else
+                return null;
+        }
+
     }
 }
