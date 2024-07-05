@@ -11,10 +11,10 @@ namespace LinkedListProject
 
         private Node head;
         private Node tail;
-        private int length; 
-        
-    
-        public LinkedList() 
+        private int length;
+
+
+        public LinkedList()
         {
             head = null;
             tail = null;
@@ -42,15 +42,15 @@ namespace LinkedListProject
             Console.WriteLine("- - - - - - - - - - - - - ");
 
             Node temp = head;
-            
+
             while (temp != null)
             {
                 Console.WriteLine(temp.data);
                 temp = temp.next;
             }
-            
+
         }
-        
+
         public void ListLength()
         {
             Console.WriteLine("The length of LinkedList is : " + length);
@@ -58,40 +58,39 @@ namespace LinkedListProject
 
         public void PrintHead()
         {
-            if(head != null) 
+            if (head != null)
             {
                 Console.WriteLine("The head of LinkedList is : " + head.data);
             }
-            
+
         }
 
-        public void PrintTail() 
+        public void PrintTail()
         {
-            if(tail != null)
+            if (tail != null)
             {
                 Console.WriteLine("The tail of LinkedList is : " + tail.data);
             }
-            
+
         }
 
         public Node DeleteLastNode()
         {
-            if(length == 0)
+            if (length == 0)
                 return null;
-          
-                Node temp = head;
-                Node son = head;
 
-                while(temp.next != null)
-                {
-                    son = temp;
-                    temp = temp.next;
-                }
+            Node temp = head;
+            Node son = head;
 
-                tail = son;
-                tail.next = null;
-           
-          
+            while(temp.next != null)
+            {
+                son = temp;
+                temp = temp.next;
+            }
+
+            tail = son;
+            son.next = null;
+            length--;
 
             if (length == 1)
             {
@@ -99,9 +98,7 @@ namespace LinkedListProject
                 tail = null;
             }
 
-            length--;
             return temp;
-
         }
 
         public Node DeleteFirstNode()
@@ -115,15 +112,32 @@ namespace LinkedListProject
             temp.next = null;
             length--;
 
-            if(length == 1)
+            if (length == 0)
             {
-                head = null;
                 tail = null;
-            }
+                head = null;
+            }   
 
             return temp;
-           
         }
 
+        public void AddFirst(int data)
+        {
+            Node newNode = new Node(data);
+
+            if (length == 0)
+            {
+                head = newNode;
+                tail = newNode;
+            }
+            else
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+
+            
+        }
+       
     }
 }

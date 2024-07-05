@@ -14,29 +14,17 @@
             linkedList.PrintHead();
             linkedList.PrintTail();
 
-            
-            Console.WriteLine("* * * * * * * * * * * * *");
+            Console.WriteLine("new node adding...");
 
-            linkedList.DeleteLastNode();
+            Console.WriteLine("Please enter a value");
 
-            Console.WriteLine("Last Node will be deleted");
-           
-            linkedList.PrintList();
-            linkedList.ListLength();
-            linkedList.PrintHead();
-            linkedList.PrintTail();
+            string inputValue = Console.ReadLine();
 
-            Console.WriteLine("* * * * * * * * * * * * *");
+            int value = int.Parse(inputValue);
 
-            linkedList.DeleteFirstNode();
-
-            Console.WriteLine("First Node will be deleted");
+            linkedList.AddFirst(value);
 
             linkedList.PrintList();
-            linkedList.ListLength();
-            linkedList.PrintHead();
-            linkedList.PrintTail();
-
         }
     }
 }
