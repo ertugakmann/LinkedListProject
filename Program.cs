@@ -14,11 +14,8 @@
             linkedList.PrintHead();
             linkedList.PrintTail();
 
-            // GetNode Method
-
-            Node node = linkedList.GetNode(3);
-
-            Console.WriteLine(node.data);
+            linkedList.InsertNode(2, 17);
+            linkedList.PrintList();
         }
     }
 }

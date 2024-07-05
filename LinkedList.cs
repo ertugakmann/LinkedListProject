@@ -139,9 +139,9 @@ namespace LinkedListProject
             
         }
 
-        public Node GetNode(int index)
+        public Node GetNode(int index) 
         {
-            if (index >= 0 && index < length)
+            if (index >= 0 && length > index) 
             {
                 Node temp = head;
 
@@ -150,9 +150,54 @@ namespace LinkedListProject
                     temp = temp.next;
                 }
                 return temp;
-            } else
+            }
+            else
+            {
+                Console.WriteLine("Please enter a valid index number...");
                 return null;
+            }
         }
-       
+
+        public void SetNode(int index, int data)
+        {
+            Node temp = GetNode(index);
+
+            if(temp != null)
+            {
+                temp.data = data;
+            }
+            else
+            {
+                Console.WriteLine("That Node is unvalid...");
+            }
+        }
+
+        public bool InsertNode(int index, int data)
+        {
+            if(index >= 0 && index < length)
+            {
+                if(index == 0)
+                {
+                    AddFirst(data);
+                    return true;
+                }
+
+                if(index == length)
+                {
+                    AppendList(data);
+                    return true;
+                }
+
+                Node newNode = new Node(data);
+                Node temp = GetNode(index - 1);
+
+                newNode.next = temp.next;
+                temp.next = newNode;
+                length++;
+                return true;
+            }
+            return false;
+            
+        }
     }
 }
