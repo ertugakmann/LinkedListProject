@@ -14,17 +14,11 @@
             linkedList.PrintHead();
             linkedList.PrintTail();
 
-            Console.WriteLine("new node adding...");
+            // GetNode Method
 
-            Console.WriteLine("Please enter a value");
+            Node node = linkedList.GetNode(3);
 
-            string inputValue = Console.ReadLine();
-
-            int value = int.Parse(inputValue);
-
-            linkedList.AddFirst(value);
-
-            linkedList.PrintList();
+            Console.WriteLine(node.data);
         }
     }
 }

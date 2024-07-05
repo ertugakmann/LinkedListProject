@@ -138,6 +138,21 @@ namespace LinkedListProject
 
             
         }
+
+        public Node GetNode(int index)
+        {
+            if (index >= 0 && index < length)
+            {
+                Node temp = head;
+
+                for (int i = 0; i < index; i++)
+                {
+                    temp = temp.next;
+                }
+                return temp;
+            } else
+                return null;
+        }
        
     }
 }
